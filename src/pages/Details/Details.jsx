@@ -39,12 +39,12 @@ const Details = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title font-bold mx-auto">Recipe Name</h2>
-            <h2 className="card-title font-bold mx-auto">
+            <h2 className=" font-bold mx-auto">
               Ingredients at least 5
             </h2>
-            <h2 className="card-title font-bold mx-auto">Cooking Method</h2>
-            <h2 className="card-title font-bold mx-auto">Rating</h2>
-            <div className="card-actions justify-end">
+            <h2 className=" font-bold mx-auto">Cooking Method</h2>
+            <div className="flex justify-between">
+              <h2 className=" font-bold">Rating</h2>
               <button className="btn btn-primary">Favorite</button>
             </div>
           </div>
@@ -58,12 +58,12 @@ const Details = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title font-bold mx-auto">Recipe Name</h2>
-            <h2 className="card-title font-bold mx-auto">
+            <h2 className=" font-bold mx-auto">
               Ingredients at least 5
             </h2>
-            <h2 className="card-title font-bold mx-auto">Cooking Method</h2>
-            <h2 className="card-title font-bold mx-auto">Rating</h2>
-            <div className="card-actions justify-end">
+            <h2 className=" font-bold mx-auto">Cooking Method</h2>
+            <div className="flex justify-between">
+              <h2 className=" font-bold">Rating</h2>
               <button className="btn btn-primary">Favorite</button>
             </div>
           </div>
@@ -77,12 +77,12 @@ const Details = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title font-bold mx-auto">Recipe Name</h2>
-            <h2 className="card-title font-bold mx-auto">
+            <h2 className=" font-bold mx-auto">
               Ingredients at least 5
             </h2>
-            <h2 className="card-title font-bold mx-auto">Cooking Method</h2>
+            <h2 className=" font-bold mx-auto">Cooking Method</h2>
             <div className="flex justify-between">
-              <h2 className="card-title font-bold">Rating</h2>
+              <h2 className=" font-bold">Rating</h2>
               <button className="btn btn-primary">Favorite</button>
             </div>
           </div>
