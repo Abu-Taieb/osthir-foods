@@ -1,10 +1,11 @@
 import React from 'react';
 import './SignUp.css'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
         <div>
-      <form onSubmit={handleSignUp} className="login">
+      <form className="login">
         <h2>Sign Up</h2>
         <div className="loginDetails">
           <input

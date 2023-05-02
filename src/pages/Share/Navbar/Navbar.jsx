@@ -20,7 +20,7 @@ const Navbar = () => {
               </span>
             </div>
             <ul className={`grid md:flex md:top-3 md:gap-4 absolute ${open ? 'top-16' : '-top-40'}`}>
-              <Link className="p-2 font-bold" to={"/home"}>
+              <Link className="p-2 font-bold" to={"/"}>
                 Home
               </Link>
               <Link className="p-2 font-bold" to={"/blog"}>
