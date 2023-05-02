@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div>
-            <p className="">All right reserved &copy; <Link to={`/main`}>Osthir Foods</Link> 2023</p>
+        <div className='container mx-auto'>
+            <p className="text-center">All right reserved &copy; <Link className='font-bold' to={`/main`}>Osthir Foods</Link> 2023</p>
         </div>
     );
 };
