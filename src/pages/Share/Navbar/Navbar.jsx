@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <nav className="bg-pink-100 py-2">
         <div className="flex justify-between items-center container mx-auto px-3">
-          <div className="">Osthir Foods</div>
+          <div className=""> <Link to={'/'}>Osthir Foods</Link> </div>
           <div className="">
             <div className="md:hidden" onClick={() => setOpen(!open)}>
               <span>
