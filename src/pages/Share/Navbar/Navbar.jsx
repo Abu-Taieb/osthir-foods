@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
+
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -26,13 +27,18 @@ const Navbar = () => {
               <Link className="p-2 font-bold" to={"/blog"}>
                 Blog
               </Link>
+
+              <Link className="p-2 font-bold" to={"/login"}>
+                Log In
+              </Link>
+              
             </ul>
           </div>
-          <div className="tooltip tooltip-bottom" data-tip="hello">
+          <div className="tooltip tooltip-bottom" data-tip={`displayName`}>
             <a href="" className="">
               <img
-                className="w-12"
-                src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+                className="w-12 rounded-full"
+                src={`https://lh3.googleusercontent.com/a/AGNmyxZBT3w0oFj2O6QFHSZDOv_93KrIiXzjWY_C36s6og=s96-c`}
                 alt=""
               />
             </a>
