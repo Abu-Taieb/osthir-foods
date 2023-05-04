@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  
   const handleRegister = event => {
     event.preventDefault();
-
+    
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
+    
   }
   return (
     <div className="hero min-h-screen bg-base-200">
