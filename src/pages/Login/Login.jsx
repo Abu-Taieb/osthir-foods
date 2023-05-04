@@ -17,7 +17,6 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-
   // Log in with google
   const auth = getAuth(app);
   const googleAuthProvider = new GoogleAuthProvider();
@@ -72,17 +71,18 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl font-bold mb-2">Please Login now!</h1>
           </div>
-          
+
           {user && (
             <div className="text-center">
               <p className="font-semibold">User Name</p>
               <p className="font-bold">{user.displayName}</p>
-              <img
-                className="rounded-full w-16 tooltip tooltip-bottom"
+              <a
+                href=""
+                className="tooltip tooltip-bottom"
                 data-tip={user.displayName}
-                src={user.photoURL}
-                alt=""
-              />
+              >
+                <img className="rounded-full w-16" src={user.photoURL} alt="" />
+              </a>
             </div>
           )}
 

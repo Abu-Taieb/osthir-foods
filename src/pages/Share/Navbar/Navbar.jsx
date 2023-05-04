@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               <img
                 className="w-12 rounded-full"
-                src={`https://lh3.googleusercontent.com/a/AGNmyxZBT3w0oFj2O6QFHSZDOv_93KrIiXzjWY_C36s6og=s96-c`}
+                src={`https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg`}
                 alt=""
               />
             </a>
