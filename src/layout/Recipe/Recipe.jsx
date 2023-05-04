@@ -10,7 +10,7 @@ const Recipe = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipe")
+    fetch("https://osthir-foods-server-abu-taieb.vercel.app/recipe")
       .then((res) => res.json())
       .then((data) => setRecipe(data));
   }, []);

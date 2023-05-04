@@ -63,7 +63,7 @@ const Home = () => {
           <div className="card w-full bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
               <img
-                src="https://thumbs.dreamstime.com/b/female-chef-restaurant-kitchen-cooking-26869165.jpg"
+                src="https://images.unsplash.com/photo-1541491008689-b5d3c6615e2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80"
                 alt="Shoes"
                 className="rounded-xl"
               />
@@ -86,7 +86,7 @@ const Home = () => {
           <div className="card w-full bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
               <img
-                src="https://www.shutterstock.com/image-photo/chef-hands-keep-wok-fire-260nw-1758966962.jpg"
+                src="https://images.unsplash.com/photo-1632776350300-11016768b521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=931&q=80"
                 alt="Shoes"
                 className="rounded-xl"
               />

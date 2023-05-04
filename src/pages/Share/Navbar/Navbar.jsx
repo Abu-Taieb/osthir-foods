@@ -5,7 +5,6 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <nav className="btn-primary py-2">

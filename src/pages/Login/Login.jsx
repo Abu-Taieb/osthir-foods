@@ -6,65 +6,83 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-
+import Navbar from "../Share/Navbar/Navbar";
 
 const Login = () => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
 
   // Log in with google
   const auth = getAuth(app);
   const googleAuthProvider = new GoogleAuthProvider();
   const githubAuthProvider = new GithubAuthProvider();
-
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then((result) => {
         const logInUser = result.user;
-        console.log(logInUser);
         setUser(logInUser);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
-
   // Log in with github
   const handleGithubSignIn = () => {
     signInWithPopup(auth, githubAuthProvider)
       .then((result) => {
         const gitLoginUser = result.user;
-        console.log(gitLoginUser);
         setUser(gitLoginUser);
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
-
   // Log in with email & password
   const handleLogin = (event) => {
     event.preventDefault();
-
+    setSuccess("");
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const loggedEPUser = result.user;
+        console.log(loggedEPUser);
+        setUser(loggedEPUser);
+        setError("");
+        event.target.reset();
+        setSuccess("User Create Successful");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
   return (
     <>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col my-3">
+        <div className="container mx-auto hero-content flex-col my-3">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl font-bold mb-2">Please Login now!</h1>
           </div>
-
+          
           {user && (
-            <div className="">
-              <h1>user: {user.displayName}</h1>
-              <img className="rounded-full w-16" src={user.photoURL} alt="" />
+            <div className="text-center">
+              <p className="font-semibold">User Name</p>
+              <p className="font-bold">{user.displayName}</p>
+              <img
+                className="rounded-full w-16 tooltip tooltip-bottom"
+                data-tip={user.displayName}
+                src={user.photoURL}
+                alt=""
+              />
             </div>
           )}
 
@@ -93,15 +111,13 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
               <div className="form-control mt-6">
+                <p className="text-red-600 text-sm">{error}</p>
+                <p className="text-green-600 text-sm">{success}</p>
                 <button className="btn btn-primary">Login</button>
               </div>
+              <div className=""></div>
               <div className="flex gap-2 justify-center">
                 <Link>
                   <button
