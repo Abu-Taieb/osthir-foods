@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipe = () => {
   const [recipes, setRecipe] = useState([]);
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/recipe")
       .then((res) => res.json())
       .then((data) => setRecipe(data));
   }, []);
+
+  const notify = () => {
+    toast("Favorite Added");
+    setDisabled(true);
+  };
 
   return (
     <>
@@ -41,12 +49,17 @@ const Recipe = () => {
             </div>
             <div className="flex justify-between mt-5">
               <Rating
-            placeholderRating={recipe.rating}
-            emptySymbol={<FaRegStar></FaRegStar>}
-            placeholderSymbol={<FaStar className="text-warning"></FaStar>}
-            fullSymbol={<FaStar></FaStar>}
-          ></Rating>
-              <button className="btn btn-primary">Favorite</button>
+                placeholderRating={recipe.rating}
+                emptySymbol={<FaRegStar></FaRegStar>}
+                placeholderSymbol={<FaStar className="text-warning"></FaStar>}
+                fullSymbol={<FaStar></FaStar>}
+              ></Rating>
+              <div className="">
+                <button onClick={notify} disabled={disabled} className="btn btn-primary">
+                  Favorite
+                </button>
+                <ToastContainer />
+              </div>
             </div>
           </div>
         </div>
